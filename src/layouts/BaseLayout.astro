@@ -1,0 +1,81 @@
+---
+import "../styles/global.css";
+import { SITE } from "../lib/site";
+
+type Props = {
+  title?: string;
+  description?: string;
+  canonicalPath?: string;
+  noindex?: boolean;
+  image?: string;
+};
+
+const {
+  title = SITE.title,
+  description = SITE.description,
+  canonicalPath = "/",
+  noindex = false,
+  image = "/social-cover.svg"
+} = Astro.props as Props;
+
+const canonicalUrl = new URL(canonicalPath, SITE.url).toString();
+const imageUrl = new URL(image, SITE.url).toString();
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE.title,
+  url: SITE.url,
+  inLanguage: "id-ID",
+  description,
+  publisher: {
+    "@type": "Organization",
+    name: SITE.name,
+    url: SITE.repo
+  }
+};
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta name="robots" content={noindex ? "noindex,nofollow" : "index,follow,max-image-preview:large"} />
+
+    <meta property="og:site_name" content={SITE.title} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:locale" content={SITE.locale} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+
+    <meta name="theme-color" content="#0047ff" />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a href="/" class="brand">Bangkah Launcher</a>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="/guide/mulai">Panduan</a>
+          <a href="/docs/about">Dokumentasi</a>
+          <a href={SITE.repo} target="_blank" rel="noreferrer">GitHub</a>
+        </nav>
+      </div>
+    </header>
+    <slot />
+    <footer>
+      <div class="container">Dokumentasi modern untuk Bangkah Launcher. Deploy-ready di Cloudflare Pages.</div>
+    </footer>
+  </body>
+</html>

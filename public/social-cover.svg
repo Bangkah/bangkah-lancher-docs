@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Bangkah Launcher - Modern Laravel Starter Kit</title>
+  <desc id="desc">Setup Laravel dalam 30 detik dengan Docker, Nginx, database, dan autentikasi production-ready</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f5f6f1"/>
+      <stop offset="100%" stop-color="#dde6ff"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0047ff"/>
+      <stop offset="100%" stop-color="#00a37a"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  
+  <!-- Decorative circles -->
+  <circle cx="1100" cy="80" r="150" fill="#0047ff" opacity="0.08"/>
+  <circle cx="80" cy="550" r="120" fill="#00a37a" opacity="0.08"/>
+  
+  <!-- Accent bar -->
+  <rect x="0" y="0" width="8" height="630" fill="url(#accent)"/>
+  
+  <!-- Main title -->
+  <text x="100" y="150" fill="#10131a" font-size="32" font-family="Segoe UI, sans-serif" font-weight="700" letter-spacing="-0.5">BANGKAH LAUNCHER</text>
+  
+  <!-- Subtitle -->
+  <text x="100" y="240" fill="#10131a" font-size="72" font-family="Segoe UI, sans-serif" font-weight="800" letter-spacing="-1">Modern Laravel</text>
+  <text x="100" y="320" fill="#10131a" font-size="72" font-family="Segoe UI, sans-serif" font-weight="800" letter-spacing="-1">Starter Kit</text>
+  
+  <!-- Features -->
+  <text x="100" y="400" fill="#5f6572" font-size="24" font-family="Segoe UI, sans-serif" font-weight="600">⚡ Setup dalam 30 detik  |  🐳 Docker ready  |  🔐 Auth built-in</text>
+  
+  <!-- Call to action -->
+  <rect x="100" y="450" width="280" height="60" fill="#0047ff" rx="8"/>
+  <text x="240" y="491" fill="#ffffff" font-size="22" font-family="Segoe UI, sans-serif" font-weight="700" text-anchor="middle">docs.bangkah.com</text>
+  
+  <!-- Accent elements -->
+  <circle cx="1050" cy="500" r="8" fill="#0047ff" opacity="0.6"/>
+  <circle cx="1080" cy="520" r="6" fill="#00a37a" opacity="0.6"/>
+  <circle cx="1110" cy="490" r="7" fill="#0047ff" opacity="0.4"/>
+</svg>

@@ -1,0 +1,31 @@
+---
+import type { NavGroup } from "../lib/navigation";
+
+type Props = {
+  groups: NavGroup[];
+  currentPath: string;
+};
+
+const { groups, currentPath } = Astro.props as Props;
+---
+
+<aside class="sidebar" aria-label="Sidebar navigation">
+  {groups.map((group) => (
+    <section>
+      <h3>{group.title}</h3>
+      <ul>
+        {group.items.map((item) => {
+          const href = `${group.basePath}/${item.slug}`;
+          const active = currentPath === href;
+          return (
+            <li>
+              <a href={href} class={active ? "active" : undefined} aria-current={active ? "page" : undefined}>
+                {item.title}
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+  ))}
+</aside>

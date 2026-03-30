@@ -1,0 +1,255 @@
+@import "@fontsource/space-grotesk/400.css";
+@import "@fontsource/space-grotesk/600.css";
+@import "@fontsource/space-grotesk/700.css";
+@import "@fontsource/ibm-plex-mono/400.css";
+
+:root {
+  --bg: #f5f6f1;
+  --surface: #ffffff;
+  --text: #10131a;
+  --muted: #5f6572;
+  --border: #d8dce6;
+  --accent: #0047ff;
+  --accent-2: #00a37a;
+  --radius: 18px;
+  --shadow: 0 14px 30px rgba(16, 19, 26, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 8% 10%, #dde6ff 0, transparent 30%),
+    radial-gradient(circle at 92% 92%, #dcfff5 0, transparent 25%),
+    var(--bg);
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+code,
+pre {
+  font-family: "IBM Plex Mono", Consolas, monospace;
+}
+
+.container {
+  width: min(1200px, 94vw);
+  margin: 0 auto;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+  background: rgba(245, 246, 241, 0.9);
+}
+
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.95rem 0;
+}
+
+.brand {
+  color: var(--text);
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.nav-links a:hover {
+  color: var(--text);
+}
+
+.page-grid {
+  display: grid;
+  grid-template-columns: 290px minmax(0, 1fr);
+  gap: 1.5rem;
+  margin: 1.5rem auto 3rem;
+}
+
+.sidebar {
+  align-self: start;
+  position: sticky;
+  top: 86px;
+  max-height: calc(100vh - 100px);
+  overflow: auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+}
+
+.sidebar h3 {
+  margin: 1rem 0 0.5rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li a {
+  display: block;
+  border-radius: 10px;
+  padding: 0.45rem 0.6rem;
+  color: #2a3040;
+  text-decoration: none;
+  font-size: 0.93rem;
+}
+
+.sidebar li a.active {
+  background: linear-gradient(110deg, #0047ff, #006cff);
+  color: white;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: clamp(1rem, 2vw, 2rem);
+}
+
+.prose h1 {
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  line-height: 1.1;
+  margin-top: 0;
+}
+
+.prose h2 {
+  margin-top: 2rem;
+  font-size: 1.45rem;
+}
+
+.prose h3 {
+  margin-top: 1.4rem;
+}
+
+.prose p,
+.prose li {
+  color: #2e3647;
+  line-height: 1.75;
+}
+
+.prose pre {
+  background: #0e1320;
+  color: #f4f6ff;
+  border-radius: 12px;
+  padding: 0.9rem;
+  overflow: auto;
+}
+
+.hero {
+  padding: clamp(2rem, 6vw, 4.5rem) 0 2rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.hero p {
+  color: var(--muted);
+  max-width: 760px;
+  font-size: clamp(1.02rem, 2vw, 1.22rem);
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.button {
+  text-decoration: none;
+  padding: 0.72rem 1rem;
+  border-radius: 12px;
+  font-weight: 700;
+  border: 1px solid var(--border);
+}
+
+.button.primary {
+  background: linear-gradient(110deg, #0047ff, #006cff);
+  color: white;
+  border: 0;
+}
+
+.button.ghost {
+  background: white;
+  color: var(--text);
+}
+
+.grid-3 {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.feature {
+  padding: 1rem;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.feature h3 {
+  margin: 0.3rem 0;
+}
+
+footer {
+  color: var(--muted);
+  padding: 2.5rem 0 3rem;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 980px) {
+  .page-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+    max-height: none;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}

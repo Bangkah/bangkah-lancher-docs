@@ -1,0 +1,594 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { SITE } from "../lib/site";
+import { docsNav, guideNav } from "../lib/navigation";
+---
+
+<BaseLayout
+  title="Bangkah Launcher - Modern Laravel Starter Kit"
+  description="Bangkah Launcher: Starter kit modern untuk scaffold Laravel project dengan Docker, Nginx, database, dan autentikasi dalam hitungan menit."
+  canonicalPath="/"
+>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-content">
+          <p class="hero-tag">⚡ Laravel Starter Kit</p>
+          <h1 class="hero-title">Setup Laravel Project Dalam 30 Detik</h1>
+          <p class="hero-subtitle">Bangkah Launcher mempercepat scaffolding dengan Docker, Nginx, database, autentikasi, dan frontend—semua siap produksi tanpa konfigurasi rumit.</p>
+          
+          <div class="button-row">
+            <a class="button primary" href="/docs/quick-start">
+              <span>🚀 Quick Start</span>
+            </a>
+            <a class="button ghost" href="/docs/about">
+              <span>📖 Dokumentasi</span>
+            </a>
+            <a class="button ghost" href={SITE.repo} target="_blank" rel="noreferrer">
+              <span>⭐ GitHub</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Command -->
+        <div class="command-block">
+          <div class="command-header">Jalankan 1 command:</div>
+          <pre><code>composer create-project laravel/laravel my-project
+cd my-project
+composer require bangkah/bangkah
+php artisan bangkah:create</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Does Bangkah Do -->
+    <section class="what-section">
+      <div class="container">
+        <h2>Apa itu Bangkah Launcher?</h2>
+        <div class="what-grid">
+          <div class="what-item">
+            <div class="what-icon">🐳</div>
+            <h3>Generate Docker Setup</h3>
+            <p>Dockerfile, docker-compose.yml, Nginx config—semua otomatis. Siap pakai untuk dev dan production.</p>
+          </div>
+
+          <div class="what-item">
+            <div class="what-icon">🗄️</div>
+            <h3>Database Configuration</h3>
+            <p>Pilih MySQL atau PostgreSQL. .env auto-configured, migrations siap jalan.</p>
+          </div>
+
+          <div class="what-item">
+            <div class="what-icon">🔐</div>
+            <h3>Authentication Scaffolding</h3>
+            <p>Laravel Breeze atau UI. Login, register, password reset—lengkap dengan UI.</p>
+          </div>
+
+          <div class="what-item">
+            <div class="what-icon">🎨</div>
+            <h3>Frontend Flexibility</h3>
+            <p>Pilih Tailwind, Bootstrap, atau headless API. Vite otomatis di-setup dan build.</p>
+          </div>
+
+          <div class="what-item">
+            <div class="what-icon">⚙️</div>
+            <h3>Zero Config Setup</h3>
+            <p>CLI interaktif yang friendly. Atau gunakan flags untuk automation/CI-CD.</p>
+          </div>
+
+          <div class="what-item">
+            <div class="what-icon">✅</div>
+            <h3>Production Ready</h3>
+            <p>Best practices built-in. Docker config optimal, security first, siap deploy langsung.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Use Bangkah -->
+    <section class="why-section">
+      <div class="container">
+        <h2>Kenapa Pakai Bangkah?</h2>
+        <div class="why-grid">
+          <div class="why-card">
+            <div class="why-number">⏱️</div>
+            <h3>Hemat Waktu</h3>
+            <p>Setup yang biasanya 30-60 menit jadi 2-3 menit. Langsung fokus ke business logic.</p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-number">🎯</div>
+            <h3>Best Practices</h3>
+            <p>Follow Laravel conventions dan industry standards. Code quality dari hari pertama.</p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-number">🔧</div>
+            <h3>Fleksibel</h3>
+            <p>Customize sesuai kebutuhan. Tidak ada lock-in atau magic yang sulit dipahami.</p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-number">📦</div>
+            <h3>Modern Stack</h3>
+            <p>Laravel 12.x, PHP 8.2+, Vite, Tailwind. Latest dan terbaik dari ecosystem.</p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-number">🚀</div>
+            <h3>Siap Produksi</h3>
+            <p>Docker optimization, Nginx config, security setup—langsung bisa deploy.</p>
+          </div>
+
+          <div class="why-card">
+            <div class="why-number">🎓</div>
+            <h3>Kurva Belajar Rendah</h3>
+            <p>Clean Laravel structure. Mudah dipahami tim baru dan junior developers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What's Included -->
+    <section class="included-section">
+      <div class="container">
+        <h2>Apa yang Included?</h2>
+        <div class="included-columns">
+          <div class="included-column">
+            <h3>🐳 Docker</h3>
+            <ul>
+              <li>Dockerfile (PHP 8.2-FPM optimized)</li>
+              <li>docker-compose.yml (multi-service)</li>
+              <li>Nginx configuration</li>
+              <li>Development + production ready</li>
+            </ul>
+          </div>
+
+          <div class="included-column">
+            <h3>💾 Database</h3>
+            <ul>
+              <li>MySQL 8 atau PostgreSQL 16</li>
+              <li>Auto .env configuration</li>
+              <li>Migration templates</li>
+              <li>Seeding setup</li>
+            </ul>
+          </div>
+
+          <div class="included-column">
+            <h3>🎨 Frontend</h3>
+            <ul>
+              <li>Tailwind CSS / Bootstrap 5</li>
+              <li>Vite build tool</li>
+              <li>Auto build on changes</li>
+              <li>Production optimization</li>
+            </ul>
+          </div>
+
+          <div class="included-column">
+            <h3>🔐 Authentication</h3>
+            <ul>
+              <li>Laravel Breeze / UI</li>
+              <li>Login & register</li>
+              <li>Password reset</li>
+              <li>Email verification</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="usecases-section">
+      <div class="container">
+        <h2>Perfect Untuk...</h2>
+        <div class="usecases">
+          <div class="usecase">
+            <span class="usecase-icon">👥</span>
+            <span class="usecase-text"><strong>Startup & MVPs</strong> — Setup cepat, fokus product</span>
+          </div>
+          <div class="usecase">
+            <span class="usecase-icon">👨‍💻</span>
+            <span class="usecase-text"><strong>Junior Developers</strong> — Clean code, best practices</span>
+          </div>
+          <div class="usecase">
+            <span class="usecase-icon">🏢</span>
+            <span class="usecase-text"><strong>Enterprise</strong> — Production-grade setup</span>
+          </div>
+          <div class="usecase">
+            <span class="usecase-icon">👨‍🏫</span>
+            <span class="usecase-text"><strong>Education</strong> — Learning Laravel modern</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Links -->
+    <section class="nav-section">
+      <div class="container">
+        <h2>Dokumentasi</h2>
+        <div class="nav-columns">
+          <!-- Docs Column -->
+          <div class="nav-column">
+            <h3>📚 Getting Started</h3>
+            <ul class="nav-list">
+              <li><a href="/docs/about">About Bangkah</a></li>
+              <li><a href="/docs/features">Features</a></li>
+              <li><a href="/docs/requirements">Requirements</a></li>
+              <li><a href="/docs/installation">Installation</a></li>
+              <li><a href="/docs/quick-start">Quick Start</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-column">
+            <h3>🛠️ Guide & Examples</h3>
+            <ul class="nav-list">
+              <li><a href="/docs/usage">Usage Guide</a></li>
+              <li><a href="/docs/examples">Examples</a></li>
+              <li><a href="/docs/templates">Templates</a></li>
+              <li><a href="/docs/docker">Docker Setup</a></li>
+              <li><a href="/docs/database">Database Config</a></li>
+            </ul>
+          </div>
+
+          <div class="nav-column">
+            <h3>🚀 Deployment & Help</h3>
+            <ul class="nav-list">
+              <li><a href="/docs/deployment">Deployment Guide</a></li>
+              <li><a href="/docs/troubleshooting">Troubleshooting</a></li>
+              <li><a href="/docs/faq">FAQ</a></li>
+              <li><a href="/docs/changelog">Changelog</a></li>
+              <li><a href={SITE.repo} target="_blank" rel="noreferrer">GitHub Issues</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Mulai Sekarang</h2>
+          <p>Baca dokumentasi lengkap dan setup project Laravel Anda dalam hitungan menit.</p>
+          <div class="cta-buttons">
+            <a class="button primary" href="/docs/quick-start">Quick Start →</a>
+            <a class="button ghost" href="/docs/installation">Baca Panduan Instalasi</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <style>
+    .hero-section {
+      background: linear-gradient(135deg, #f5f6f1 0%, #dde6ff 50%, #dcfff5 100%);
+      padding: 5rem 0 3rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-content {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: rgba(0, 71, 255, 0.1);
+      color: #0047ff;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.1;
+      margin: 1rem 0 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: #5f6572;
+      max-width: 700px;
+      margin: 1.5rem auto 2rem;
+      line-height: 1.6;
+    }
+
+    .command-block {
+      background: #0e1320;
+      color: #f4f6ff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      overflow-x: auto;
+    }
+
+    .command-header {
+      font-size: 0.85rem;
+      color: #9ec1ff;
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+    }
+
+    .command-block code {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .what-section,
+    .why-section,
+    .included-section,
+    .usecases-section,
+    .nav-section {
+      padding: 4rem 0;
+    }
+
+    .what-section h2,
+    .why-section h2,
+    .included-section h2,
+    .usecases-section h2,
+    .nav-section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .what-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .what-item {
+      background: white;
+      border: 1px solid #d8dce6;
+      border-radius: 14px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .what-item:hover {
+      border-color: #0047ff;
+      box-shadow: 0 8px 24px rgba(0, 71, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .what-icon {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .what-item h3 {
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+    }
+
+    .what-item p {
+      color: #5f6572;
+      line-height: 1.6;
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .why-card {
+      background: linear-gradient(135deg, rgba(0, 71, 255, 0.05), rgba(0, 163, 122, 0.05));
+      border: 1px solid #d8dce6;
+      border-radius: 14px;
+      padding: 1.8rem;
+    }
+
+    .why-number {
+      font-size: 2rem;
+      display: block;
+      margin-bottom: 0.8rem;
+    }
+
+    .why-card h3 {
+      margin: 0 0 0.6rem;
+      font-size: 1.05rem;
+    }
+
+    .why-card p {
+      color: #5f6572;
+      line-height: 1.5;
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .included-columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+    }
+
+    .included-column {
+      background: white;
+      border: 1px solid #d8dce6;
+      border-radius: 14px;
+      padding: 2rem;
+    }
+
+    .included-column h3 {
+      margin: 0 0 1.2rem;
+      font-size: 1.1rem;
+    }
+
+    .included-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .included-column li {
+      color: #5f6572;
+      font-size: 0.95rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .included-column li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #00a37a;
+      font-weight: 700;
+    }
+
+    .usecases {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .usecase {
+      background: linear-gradient(135deg, #f5f6f1, white);
+      border: 1px solid #d8dce6;
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.8rem;
+    }
+
+    .usecase-icon {
+      font-size: 2rem;
+    }
+
+    .usecase-text {
+      font-size: 0.95rem;
+      color: #5f6572;
+      line-height: 1.5;
+    }
+
+    .nav-columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .nav-column h3 {
+      font-size: 1rem;
+      margin: 0 0 1rem;
+      color: #10131a;
+    }
+
+    .nav-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .nav-list a {
+      color: #0047ff;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 0.3rem 0;
+      border-bottom: 1px solid transparent;
+      transition: all 0.2s ease;
+    }
+
+    .nav-list a:hover {
+      border-bottom-color: #0047ff;
+      transform: translateX(2px);
+    }
+
+    .cta-section {
+      background: linear-gradient(110deg, #0047ff, #006cff);
+      color: white;
+      padding: 4rem 0;
+      text-align: center;
+      border-radius: 20px;
+      margin: 3rem 0 0;
+    }
+
+    .cta-content h2 {
+      font-size: 2rem;
+      margin: 0 0 1rem;
+    }
+
+    .cta-content p {
+      font-size: 1.1rem;
+      opacity: 0.95;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cta-section .button.primary {
+      background: white;
+      color: #0047ff;
+      border: 0;
+    }
+
+    .cta-section .button.primary:hover {
+      background: #f5f6f1;
+    }
+
+    .cta-section .button.ghost {
+      border-color: white;
+      color: white;
+    }
+
+    .cta-section .button.ghost:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 3rem 0 2rem;
+      }
+
+      .button-row {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+
+      .button {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .what-grid,
+      .why-grid,
+      .included-columns,
+      .usecases {
+        grid-template-columns: 1fr;
+      }
+
+      .command-block {
+        font-size: 0.85rem;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+      }
+    }
+  </style>
+</BaseLayout>

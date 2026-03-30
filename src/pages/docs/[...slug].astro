@@ -1,0 +1,48 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Sidebar from "../../components/Sidebar.astro";
+import { docsNav } from "../../lib/navigation";
+
+type Props = {
+  entry: Awaited<ReturnType<typeof getCollection<"docs">>>[number];
+};
+
+export async function getStaticPaths() {
+  const docs = await getCollection("docs");
+  return docs.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry }
+  }));
+}
+
+const { entry } = Astro.props as Props;
+const { Content, headings } = await render(entry);
+
+const pathname = `/docs/${entry.slug}`;
+const summary = entry.data.description ?? entry.body.replace(/[#`>*_\-]/g, " ").replace(/\s+/g, " ").trim().slice(0, 160);
+---
+
+<BaseLayout title={`${entry.data.title} | Bangkah Docs`} description={summary} canonicalPath={pathname}>
+  <main class="container page-grid">
+    <Sidebar groups={docsNav} currentPath={pathname} />
+
+    <article class="card prose">
+      <p style="margin-top:0;color:#5f6572;">Dokumentasi / {entry.data.title}</p>
+      <Content />
+
+      {headings.length > 1 && (
+        <section style="margin-top:2.5rem;border-top:1px solid #d8dce6;padding-top:1rem;">
+          <h2 style="margin-top:0;">On This Page</h2>
+          <ul>
+            {headings.map((heading) => (
+              <li>
+                <a href={`#${heading.slug}`}>{heading.text}</a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+    </article>
+  </main>
+</BaseLayout>
