@@ -8,6 +8,8 @@ type Props = {
   canonicalPath?: string;
   noindex?: boolean;
   image?: string;
+  keywords?: string;
+  twitterCard?: string;
 };
 
 const {
@@ -15,7 +17,9 @@ const {
   description = SITE.description,
   canonicalPath = "/",
   noindex = false,
-  image = "/social-cover.svg"
+  image = "/social-cover.svg",
+  keywords = SITE.keywords,
+  twitterCard = "summary_large_image"
 } = Astro.props as Props;
 
 const canonicalUrl = new URL(canonicalPath, SITE.url).toString();
@@ -24,14 +28,23 @@ const imageUrl = new URL(image, SITE.url).toString();
 const schema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: SITE.title,
+  name: SITE.name,
   url: SITE.url,
   inLanguage: "id-ID",
   description,
+  keywords,
+  creator: {
+    "@type": "Organization",
+    name: SITE.author
+  },
   publisher: {
     "@type": "Organization",
     name: SITE.name,
-    url: SITE.repo
+    url: SITE.repo,
+    logo: {
+      "@type": "ImageObject",
+      url: new URL("/social-cover.svg", SITE.url).toString()
+    }
   }
 };
 ---
@@ -43,8 +56,11 @@ const schema = {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content={SITE.author} />
     <link rel="canonical" href={canonicalUrl} />
     <meta name="robots" content={noindex ? "noindex,nofollow" : "index,follow,max-image-preview:large"} />
+    <meta name="language" content="Indonesian" />
 
     <meta property="og:site_name" content={SITE.title} />
     <meta property="og:type" content="website" />
@@ -54,10 +70,11 @@ const schema = {
     <meta property="og:image" content={imageUrl} />
     <meta property="og:locale" content={SITE.locale} />
 
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:card" content={twitterCard} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={imageUrl} />
+    {SITE.twitter && <meta name="twitter:creator" content={SITE.twitter} />}
 
     <meta name="theme-color" content="#0047ff" />
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />

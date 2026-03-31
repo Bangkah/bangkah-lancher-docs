@@ -1,5 +1,7 @@
 ---
-title: Usage
+title: Usage | Bangkah Launcher Usage Guide
+description: Panduan penggunaan Bangkah Launcher - Interactive mode dengan CLI, non-interactive mode untuk CI/CD, dan customization options untuk Laravel project setup.
+updatedAt: 2026-03-31
 ---
 
 # Usage

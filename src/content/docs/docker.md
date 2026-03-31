@@ -1,5 +1,7 @@
 ---
-title: Docker
+title: Docker | Bangkah Launcher Docker Configuration
+description: Konfigurasi Docker Bangkah Launcher - Dockerfile, docker-compose.yml, Nginx setup, PHP-FPM, MySQL/PostgreSQL, dan production-ready environment untuk Laravel.
+updatedAt: 2026-03-31
 ---
 
 # Docker Configuration

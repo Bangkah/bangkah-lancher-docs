@@ -1,5 +1,7 @@
 ---
-title: Requirements
+title: Requirements | Bangkah Launcher System Requirements
+description: Persyaratan sistem untuk menjalankan Bangkah Launcher. PHP 8.2+, Composer 2.0+, Node.js 18+, Docker Compose v2+, dan Git.
+updatedAt: 2026-03-31
 ---
 
 # Requirements

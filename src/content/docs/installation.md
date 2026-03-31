@@ -1,6 +1,7 @@
 ---
-title: Installation
-updatedAt: 2026-03-30
+title: Installation | Install Bangkah Launcher di Laravel Project
+description: Panduan instalasi Bangkah Launcher step-by-step. Setup requirement sistem, composer installation, dan konfigurasi awal Laravel project dengan Bangkah CLI.
+updatedAt: 2026-03-31
 ---
 
 # Installation

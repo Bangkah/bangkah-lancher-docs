@@ -1,5 +1,7 @@
 ---
-title: Features
+title: Features | Bangkah Launcher - Laravel Starter Kit Features
+description: Fitur lengkap Bangkah Launcher - Zero config setup, Docker ready, database configuration, authentication scaffolding, frontend flexibility, dan production-ready setup untuk Laravel project.
+updatedAt: 2026-03-31
 ---
 
 # Features

@@ -1,6 +1,7 @@
 ---
-title: Quick Start
-updatedAt: 2026-03-30
+title: Quick Start - Setup Bangkah Launcher dalam 3 Menit
+description: Panduan quick start setup Bangkah Launcher. Install composer package, jalankan CLI interaktif, dan mulai develop Laravel project dengan Docker dan autentikasi siap jalan.
+updatedAt: 2026-03-31
 ---
 
 # Quick Start

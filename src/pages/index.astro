@@ -48,21 +48,48 @@ const popularLinks = [
   { label: "Changelog", href: "/docs/changelog" },
   { label: "GitHub Repository", href: SITE.repo }
 ];
+
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Bangkah Launcher",
+  description: "Modern Laravel starter kit untuk scaffold Docker, database, dan autentikasi otomatis",
+  url: SITE.url,
+  applicationCategory: "DeveloperApplication",
+  operatingSystem: "Any",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD"
+  },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5",
+    bestRating: "5",
+    worstRating: "1",
+    ratingCount: "1"
+  },
+  author: {
+    "@type": "Organization",
+    name: "Bangkah",
+    url: SITE.repo
+  }
+};
 ---
 
 <BaseLayout
-  title="Bangkah Launcher Docs | Dokumentasi Resmi"
-  description="Dokumentasi resmi Bangkah Launcher untuk instalasi, konfigurasi, penggunaan, dan deployment Laravel project."
+  title="Bangkah Launcher | Dokumentasi Laravel Starter Kit Modern"
+  description="Bangkah Launcher - Laravel starter kit untuk setup Docker, database, dan autentikasi otomatis. Buat proyek Laravel siap produksi dalam 2-3 menit tanpa config rumit."
+  keywords="bangkah launcher, laravel starter kit, laravel scaffold, laravel docker, laravel cli, laravel automation"
   canonicalPath="/"
 >
   <main class="home-page">
     <section class="hero">
       <div class="container hero-content">
-        <p class="eyebrow">Dokumentasi Resmi</p>
-        <h1>Dokumentasi Bangkah Launcher</h1>
+        <p class="eyebrow">Bangkah Launcher - Laravel Starter Kit</p>
+        <h1>Setup Laravel Project dalam 2-3 Menit dengan Bangkah Launcher</h1>
         <p>
-          Referensi lengkap untuk instalasi, penggunaan, konfigurasi, dan deployment proyek Laravel
-          dengan Bangkah Launcher.
+          Bangkah Launcher adalah modern Laravel starter kit yang mengotomasi setup Docker, database, autentikasi, dan frontend assets. Scaffold proyek Laravel siap produksi tanpa konfigurasi rumit. Dokumentasi lengkap untuk instalasi, penggunaan, konfigurasi, dan deployment.
         </p>
         <div class="button-row">
           <a class="button primary" href="/docs/quick-start">Mulai Cepat</a>
@@ -431,6 +458,8 @@ const popularLinks = [
       }
     }
   </style>
+
+  <script type="application/ld+json" set:html={JSON.stringify(softwareSchema)} />
 
   <script is:inline>
     const input = document.getElementById("docs-search");

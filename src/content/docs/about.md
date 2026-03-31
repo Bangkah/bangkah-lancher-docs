@@ -1,5 +1,7 @@
 ---
-title: About Bangkah Launcher
+title: About Bangkah Launcher - Modern Laravel Starter Kit
+description: Bangkah Launcher adalah Laravel starter kit modern yang mengotomasi setup Docker, database, dan autentikasi untuk scaffold proyek laravel dalam 2-3 menit.
+updatedAt: 2026-03-31
 ---
 
 # About Bangkah Launcher
