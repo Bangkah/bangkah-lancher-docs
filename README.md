@@ -2,12 +2,12 @@
 
 Frontend-only rewrite untuk dokumentasi Bangkah Launcher dengan SEO lengkap dan deploy-ready ke Cloudflare Pages.
 
-⚡ **29 static pages** | 🔍 **SEO-optimized** | 📱 **Mobile-friendly** | ⚙️ **Zero config deploy**
+⚡ **Static pages** | 🔍 **SEO-optimized** | 📱 **Mobile-friendly** | ⚙️ **Zero config deploy**
 
 ## Stack
 
 - **Astro 5** - Static site generator (pre-render semua halaman)
-- **Markdown collections** - `src/content/docs` + `src/content/guide`
+- **Markdown collections** - `src/content/docs`
 - **SEO built-in** - Canonical URLs, Open Graph, Twitter Card, JSON-LD, Sitemap, Robots.txt
 - **Deploy target** - Cloudflare Pages (CDN global, SSL otomatis, 0 cost)
 
@@ -31,7 +31,7 @@ npm run preview  # preview dist folder lokal
 
 ## Deploy ke Cloudflare Pages
 
-**[📖 Read full deployment guide →](./DEPLOY.md)**
+**[📖 Read full deployment docs →](./DEPLOY.md)**
 
 TL;DR:
 1. Push ke GitHub
@@ -65,12 +65,10 @@ Settings Cloudflare yang tepat:
 cloudflare-docs-frontend/
 ├── src/
 │   ├── content/              # Markdown content
-│   │   ├── docs/             # 20 docs pages
-│   │   ├── guide/            # 4 guide pages (Indonesian)
+│   │   ├── docs/             # docs pages
 │   │   └── config.ts         # Content collection schema
 │   ├── pages/                # Astro pages (routes)
 │   │   ├── docs/[...slug].astro    # /docs/{slug}
-│   │   ├── guide/[...slug].astro   # /guide/{slug}
 │   │   └── index.astro             # homepage
 │   ├── layouts/
 │   │   └── BaseLayout.astro  # SEO + header + footer
@@ -83,11 +81,11 @@ cloudflare-docs-frontend/
 ├── public/
 │   ├── robots.txt
 │   └── social-cover.svg
-├── dist/                     # Build output (29 HTML files)
+├── dist/                     # Build output
 ├── astro.config.mjs          # Astro config + sitemap
 ├── package.json
 ├── tsconfig.json
-├── DEPLOY.md                 # Deployment guide
+├── DEPLOY.md                 # Deployment docs
 ├── CHECKLIST.md              # Pre/post deploy checklist
 └── README.md
 ```
@@ -98,7 +96,6 @@ cloudflare-docs-frontend/
 
 1. Create atau edit markdown di:
    - `src/content/docs/your-page.md` (untuk docs)
-   - `src/content/guide/your-page.md` (untuk guide)
 
 2. Add frontmatter:
 ```yaml
@@ -156,7 +153,7 @@ npm run build
 
 Check: `dig docs.bangkah.com` or https://www.whatsmydns.net
 
-See [DEPLOY.md](./DEPLOY.md#troubleshooting) untuk full troubleshoot guide.
+See [DEPLOY.md](./DEPLOY.md#troubleshooting) untuk troubleshooting lengkap.
 
 ## Checklists
 

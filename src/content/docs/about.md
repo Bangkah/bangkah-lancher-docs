@@ -149,4 +149,4 @@ Setup Bangkah dalam 3 langkah:
    npm run dev
    ```
 
-👉 [Start with Quick Start guide →](/docs/quick-start)
+👉 [Start with Quick Start docs →](/docs/quick-start)

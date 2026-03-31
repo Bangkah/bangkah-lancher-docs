@@ -1,5 +1,6 @@
 ---
 title: Quick Start
+updatedAt: 2026-03-30
 ---
 
 # Quick Start

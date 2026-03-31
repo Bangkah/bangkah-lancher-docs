@@ -6,7 +6,7 @@ Checklist sebelum dan sesudah deploy.
 
 - [ ] Semua konten markdown selesai
 - [ ] Test lokal: `npm run dev` berjalan tanpa error
-- [ ] Build lokal: `npm run build` berhasil (29 pages generated)
+- [ ] Build lokal: `npm run build` berhasil
 - [ ] Git initialized dan semua files committed
 - [ ] GitHub repository dibuat dan public
 - [ ] Git remote pointing ke GitHub repo
@@ -27,10 +27,10 @@ git status
 
 - [ ] Pages deployment active di Cloudflare dashboard
 - [ ] Preview URL accessible dan loading cepat
-- [ ] All 29 pages render correctly
+- [ ] Semua halaman render dengan benar
 - [ ] Sidebar navigation works
 - [ ] Links antar halaman berfungsi
-- [ ] Home page `/` redirect ke `/docs/about` ✓ atau sesuaikan
+- [ ] Home page `/` terbuka normal
 - [ ] Mobile responsiveness OK (test di DevTools)
 
 ```bash
@@ -58,7 +58,7 @@ dig docs.bangkah.com
 
 ## Update Docs Workflow
 
-1. Edit markdown di `src/content/docs/` atau `src/content/guide/`
+1. Edit markdown di `src/content/docs/`
 2. `npm run build` local untuk test
 3. `git add . && git commit -m "..."` dan `git push`
 4. Cloudflare auto-builds dan deploys (~1-2 min)

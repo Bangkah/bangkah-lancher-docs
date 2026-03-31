@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text: Mulai
-      link: /guide/mulai
+      link: /docs/quick-start
     - theme: alt
       text: Lihat di GitHub
       link: https://github.com/Bangkah/bangkah-launcher
@@ -28,4 +28,4 @@ features:
 
 Bangkah Launcher adalah alat untuk mempermudah pengelolaan dan peluncuran proyek-proyek Bangkah. Halaman ini adalah dokumentasi resmi untuk membantu Anda menginstal, mengonfigurasi, dan menggunakan fitur-fiturnya.
 
-Jika Anda baru pertama kali, mulai dari halaman [Mulai](/guide/mulai).
+Jika Anda baru pertama kali, mulai dari halaman [Quick Start](/docs/quick-start).

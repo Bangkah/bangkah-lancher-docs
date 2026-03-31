@@ -5,7 +5,7 @@ export type NavItem = {
 
 export type NavGroup = {
   title: string;
-  basePath: "/docs" | "/guide";
+  basePath: "/docs";
   items: NavItem[];
 };
 
@@ -59,19 +59,6 @@ export const docsNav: NavGroup[] = [
       { title: "Changelog", slug: "changelog" },
       { title: "API Documentation", slug: "api-documentation" },
       { title: "License", slug: "license" }
-    ]
-  }
-];
-
-export const guideNav: NavGroup[] = [
-  {
-    title: "Panduan",
-    basePath: "/guide",
-    items: [
-      { title: "Mulai", slug: "mulai" },
-      { title: "Instalasi", slug: "instalasi" },
-      { title: "Konfigurasi", slug: "konfigurasi" },
-      { title: "CLI", slug: "cli" }
     ]
   }
 ];

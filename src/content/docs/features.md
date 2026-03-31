@@ -259,7 +259,7 @@ Bangkah generate project dengan:
 ✓ 1-2 Example migrations
 ✓ CSS/JS assets configured
 ✓ .env template
-✓ README dengan setup guide
+✓ README dengan setup dokumentasi
 ```
 
 **Total setup time:** 2-3 minutes vs 30-60 minutes manual
@@ -293,5 +293,5 @@ php artisan bangkah:create \
 
 - 🚀 [Quick Start →](/docs/quick-start)
 - 🐳 [Docker Setup →](/docs/docker)
-- 🎨 [Frontend Guide →](/docs/frontend)
+- 🎨 [Frontend Setup →](/docs/frontend)
 - 📚 [Full Documentation →](/docs/usage)

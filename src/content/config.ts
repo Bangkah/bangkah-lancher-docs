@@ -4,16 +4,9 @@ const docs = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
-    description: z.string().optional()
+    description: z.string().optional(),
+    updatedAt: z.coerce.date().optional()
   })
 });
 
-const guide = defineCollection({
-  type: "content",
-  schema: z.object({
-    title: z.string(),
-    description: z.string().optional()
-  })
-});
-
-export const collections = { docs, guide };
+export const collections = { docs };

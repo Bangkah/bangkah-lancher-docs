@@ -1,5 +1,6 @@
 ---
 title: Installation
+updatedAt: 2026-03-30
 ---
 
 # Installation
@@ -348,5 +349,5 @@ Semua OK? **You're ready to go!**
 
 - 🚀 [Quick Start →](/docs/quick-start)
 - 📚 [Features Overview →](/docs/features)
-- 🐳 [Docker Guide →](/docs/docker)
+- 🐳 [Docker Setup →](/docs/docker)
 - ❓ [FAQ & Help →](/docs/faq)
